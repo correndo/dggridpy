@@ -1,0 +1,5 @@
+build
+dggridpy.egg-info
+dist
+notebooks/.ipynb_checkpoints
+*.o
