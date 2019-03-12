@@ -1,3 +1,31 @@
+/////////////////////////////////////////////////////////////////////////
+//
+// (c) Copyright University of Southampton IT Innovation, 2019
+//
+// Copyright in this software belongs to IT Innovation Centre of
+// Gamma House, Enterprise Road, Southampton SO16 7NS, UK.
+//
+// This software may not be used, sold, licensed, transferred, copied
+// or reproduced in whole or in part in any manner or form or in or
+// on any media by any person other than in accordance with the terms
+// of the Licence Agreement supplied with the software, or otherwise
+// without the prior written consent of the copyright owners.
+//
+// This software is distributed WITHOUT ANY WARRANTY, without even the
+// implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+// PURPOSE, except where stated in the Licence Agreement supplied with
+// the software.
+//
+//	Created By :	Gianluca Correndo
+//	Created Date :	2019/03/01
+//	Created for Project:	SEDNA
+//
+/////////////////////////////////////////////////////////////////////////
+//
+// Dependancies: DGGRID
+//
+////////////////////////////////////////////////////////////////////////
+
 #include <pybind11/pybind11.h>
 #include <pybind11/stl_bind.h>
 #include <pybind11/stl.h>

@@ -21,7 +21,7 @@ modification, are permitted provided that the following conditions are met:
    derived from this software without specific prior written permission.
 
 5. This software should only be used for research, education or evaluation purposes. A free
-   commercial license is available on request to {geoparsepy}@it-innovation.soton.ac.uk.
+   commercial license is available on request to {gc}@it-innovation.soton.ac.uk.
 
 THIS SOFTWARE IS PROVIDED BY University of Southampton IT Innovation Centre ''AS IS'' AND ANY
 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
