@@ -161,6 +161,54 @@ GEO_to_SEQNUM( dggs: dggridpy.DGGSParam,
 
 Example (see included [notebook](notebooks) `Use case of DGGS for spatial statistics (Earthquackes frequency).ipynb`.
 
+### SeqNumGrid
+This function returns a dictionary where for each sequence number in input (key) an array of coordinates is associated (value).
+
+```
+SeqNumGrid( dggs: dggridpy.DGGSParam,
+            cseqnums: List[int]) -> Dict[int, numpy.ndarray[float64]]
+```
+
+Example (see included [notebook](notebooks) `Use case of DGGS for spatial statistics (Earthquackes frequency).ipynb`.
+
+
+## Low level APIs
+The functionalities exposed from the **DGGRID** library, and subsequently wrapped up in Python, are intended for the extension of the class structure and for accessing low level APIs.
+
+### DgIDGG
+
+Icosahedral DGG abstract class. Concrete classes are: [DgIDGGS4H](#DgIDGGS4H), [DgIDGGS4D](#DgIDGGS4D), [DgIDGGS4T](#DgIDGGS4T), [DgIDGGS43H](#DgIDGGS43H)
+
+#### DgIDGG.getVertices
+Get the vertices of a DGGS location or a DGGS cell sequence in this DGGS. The parameter **densify** increments the number of points of the cells' polygons.
+
+```
+DgIDGG.getVertices(location: DgLocation,
+                   densify: int) -> numpy.ndarray[float64]
+
+DgIDGG.getVertices(sequence_number: int,
+                   densify: int) -> numpy.ndarray[float64]                   
+```
+
+### DgIDGGS4H
+ISEA4H DGGS class.
+
+![ISEA4H](https://webpages.sou.edu/~sahrk/dgg/isea.old/pics/topogif/isea4h1p2.gif "ISEA4H")
+
+### DgIDGGS4D
+ISEA4D DGGS class.
+
+![ISEA4D](https://webpages.sou.edu/~sahrk/dgg/isea.old/pics/topogif/isea4d2.gif "ISEA4D")
+
+### DgIDGGS4T
+ISEA4T DGGS class.
+
+![ISEA4T](https://webpages.sou.edu/~sahrk/dgg/isea.old/pics/topogif/isea4t2.gif "ISEA4T")
+
+### DgIDGGS43H
+ISEA3H DGGS class.
+
+![ISEA3H](https://webpages.sou.edu/~sahrk/dgg/isea.old/pics/topogif/isea3h1p2.gif "ISEA3H")
 
 > Richard Barnes (2016). dggridR: Discrete Global Grids for R. https://github.com/r-barnes/dggridR.
 
