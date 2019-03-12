@@ -33,3 +33,22 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWATE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+The dggridpy repository and source distributions bundle several libraries that are
+compatibly licensed.  We list these here.
+
+Name:clipper: 
+License: Boostv1 license
+
+Name:dggrid:
+License: "public domain software program"
+
+Name:proj4lib:
+License: MIT-style license
+
+Name:shapelib:
+License: MIT-style license
+
+Name:dggridR:
+License: MIT (Expat) license
