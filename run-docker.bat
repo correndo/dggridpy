@@ -1,1 +1,1 @@
-docker run --rm -p 8888:8888 dggridpy:0.0.1 
+docker run --rm -p 8889:8889 dggridpy:0.0.1

@@ -109,6 +109,18 @@ public:
     void setProjection(const ProjectionType p ) { projection = p;}
     ProjectionType getProjection(){ return projection;}
 
+    static DGGSParam ISEA3H(){
+      return DGGSParam(0.0,0.0,0.0,3,0,HEXAGON,ISEA);
+    }
+
+    static DGGSParam ISEA4H(){
+      return DGGSParam(0.0,0.0,0.0,4,0,HEXAGON,ISEA);
+    }
+
+    static DGGSParam ISEA4T(){
+      return DGGSParam(0.0,0.0,0.0,3,0,TRIANGLE,ISEA);
+    }
+
 };
 
 
@@ -185,12 +197,15 @@ PYBIND11_MODULE(dggridpy, m) {
       .def("getAzimuthDeg" , &DGGSParam::getAzimuthDeg)
       .def("setAperture" , &DGGSParam::setAperture)
       .def("getAperture" , &DGGSParam::getAperture)
-      .def("setRes" , &DGGSParam::setRes)
-      .def("getRes" , &DGGSParam::getRes)
+      .def("setResolution" , &DGGSParam::setRes)
+      .def("getResolution" , &DGGSParam::getRes)
       .def("setTopology" , &DGGSParam::setTopology)
       .def("getTopology" , &DGGSParam::getTopology)
       .def("setProjection" , &DGGSParam::setProjection)
       .def("getProjection" , &DGGSParam::getProjection)
+      .def("ISEA3H" , &DGGSParam::ISEA3H)
+      .def("ISEA4H" , &DGGSParam::ISEA4H)
+      .def("ISEA4T" , &DGGSParam::ISEA4T)
       .def("__repr__", [](const DGGSParam &dggs){
           std::ostringstream sink;
           sink << "DGGS:\n\tpole longitude: " << dggs.pole_lon_deg << endl
@@ -317,6 +332,45 @@ PYBIND11_MODULE(dggridpy, m) {
   py::arg("cls") = 0.0,
   py::arg("resround") = "nearest",
   py::arg("metric")   = true  );
+
+  m.def("GEO_to_Q2DI" , [](
+    DGGSParam dggs,
+    std::vector<long double> in_lon_deg,
+    std::vector<long double> in_lat_deg
+  ){
+      if (in_lon_deg.size() != in_lat_deg.size())
+        throw std::runtime_error("Input coordinates collections' size must match");
+
+      dglib::Transformer dgt(
+        dggs.pole_lon_deg,
+        dggs.pole_lat_deg,
+        dggs.azimuth_deg,
+        dggs.aperture,
+        dggs.res,
+        TopologyType_str[dggs.topology],
+        ProjectionType_str[dggs.projection]);
+
+      std::vector< std::vector< long int > >  result (in_lon_deg.size(), std::vector< long int >(3));
+
+      for(unsigned int i=0 ; i< in_lon_deg.size() ; i++){
+           const long double tin_lon_deg = in_lon_deg[i];
+           const long double tin_lat_deg = in_lat_deg[i];
+
+           long double tout_i = result[0][i];
+           long double tout_j = result[1][i];
+           uint64_t tout_quad = result[2][i];
+           auto in = dgt.inGEO(tin_lon_deg, tin_lat_deg);
+           dgt.outQ2DI(in, tout_quad, tout_i, tout_j);
+           result[i][0] = tout_i;
+           result[i][1] = tout_j;
+           result[i][2] = tout_quad;
+       }
+      return result;
+  } , "Uses a discrete global grid system to convert between GEO and Q2DI",
+  py::arg("dggs"),
+  py::arg("in_lon_deg"),
+  py::arg("in_lat_deg"));
+
 
   m.def("GEO_to_SEQNUM" , [](
     DGGSParam dggs,

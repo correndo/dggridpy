@@ -4,6 +4,8 @@ RUN apt-get update
 
 RUN apt-get -y install python3 python3-dev python3-pip git
 
+RUN apt-get -y install dos2unix
+
 RUN apt-get -y install cmake
 
 RUN apt-get -y install libgeos++-dev proj-bin proj-data libproj-dev
@@ -30,4 +32,4 @@ WORKDIR /opt/dggridpy/notebooks
 
 EXPOSE 8888
 
-ENTRYPOINT jupyter notebook --allow-root --port 8888 --ip=0.0.0.0
+CMD ["sh", "-c", "jupyter notebook --port=8889 --no-browser --allow-root --ip=0.0.0.0"]
