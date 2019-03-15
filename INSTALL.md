@@ -8,7 +8,7 @@
 There are two ways to install *dggridpy* into your system: [compiling](#compile-dggridpy) and installing the software, or install a [precompiled](#install-precompiled) package for your system.  
 
 ## Compile dggridpy
-In order to compile and install **dggridpy** from source, [pybind11](https://github.com/pybind/pybind11) and a compliant C++ compiler is required. Download the latest version of pybind11 (version 2.2.4 was used) and then edit the ``CMakeLists.txt`` file to point to the folder where pybind11 have been downloaded.
+In order to compile and install **dggridpy** from source, [pybind11](https://github.com/pybind/pybind11), [CMake](https://cmake.org/), and a compliant C++ compiler is required. Download the latest version of pybind11 (version 2.2.4 was used) and then edit the ``CMakeLists.txt`` file to point to the folder where pybind11 have been downloaded. Be sure to have CMake installed and included in your system PATH.
 
 ```
 add_subdirectory(../pybind11 build)
