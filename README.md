@@ -1,9 +1,9 @@
 # dggridpy: Discrete Global Grids for Python
 
 
-<img src="notebooks/image/ISEA3H.png" width="35%"/> <img src="notebooks/image/ISEA4H.png" width="35%"/>
+<img src="notebooks/image/ISEA3H.png" width="45%"/> <img src="notebooks/image/ISEA4H.png" width="45%"/>
 
-<img src="notebooks/image/ISEA4D.png" width="35%"/> <img src="notebooks/image/ISEA4T.png" width="35%"/>
+<img src="notebooks/image/ISEA4D.png" width="45%"/> <img src="notebooks/image/ISEA4T.png" width="45%"/>
 
 
 
