@@ -24,18 +24,18 @@ The initial set of APIs wrapped in Python are described in [API.md](API.md).
 
 ## Credits
 
-The code in the [src](src) directory is the DGGRIDv6.2b developed by [Kevin Sahr](https://discreteglobalgrids.org/) and includes also modifications from [Richard Barnes](https://github.com/r-barnes/dggridR)
+The code in the [src](src) directory is the DGGRIDv6.2b developed by [Southern Terra Cognita Laboratory](https://discreteglobalgrids.org/) and includes also modifications from [Richard Barnes](https://github.com/r-barnes/dggridR) for easing the wrapping in R.
 
 ## Licensing
 
 This package includes several libraries adopting the following licenses:
 
- - clipper: The clipper library has been released under the Boostv1 license by Angus Johnson
+ - clipper: released under the [Boostv1](https://tldrlegal.com/license/boost-software-license-1.0-explained) license
 
- - dggrid: Kevin Sahr has released dggrid as a "public domain software program"
+ - dggrid: released DGGRID with a [GNU Affero General Public License](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0))
 
- - proj4lib: Gerald Evenden has released this code into the public domain. More recent versions of the library, not used here, are under an MIT-style license.
+ - proj4lib: Gerald Evenden has released this code into the public domain. More recent versions of the library, not used here, are under an [MIT license](https://tldrlegal.com/license/mit-license).
 
- - shapelib: Frank Warmerdam has released shapelib under an MIT-style license. There is also an LGPL licensing option which I have chosen not to use.
+ - shapelib: released under the [MIT license](https://tldrlegal.com/license/mit-license).
 
-This package, and all code and documentation not otherwise mentioned above are released under the [MIT license](https://tldrlegal.com/license/mit-license), as stated in the LICENSE file.
+**This package, and all code and documentation not otherwise mentioned above** are released under the [MIT license](https://tldrlegal.com/license/mit-license), as stated in the LICENSE file.
