@@ -1,9 +1,9 @@
 # dggridpy: Discrete Global Grids for Python
 
 
-<img src="notebooks/image/ISEA3H.png" width="40%"/> <img src="notebooks/image/ISEA4H.png" width="40%"/>
+<img src="notebooks/image/ISEA3H.png" width="35%"/> <img src="notebooks/image/ISEA4H.png" width="35%"/>
 
-<img src="notebooks/image/ISEA4D.png" width="40%"/> <img src="notebooks/image/ISEA4T.png" width="40%"/>
+<img src="notebooks/image/ISEA4D.png" width="35%"/> <img src="notebooks/image/ISEA4T.png" width="35%"/>
 
 
 
@@ -12,6 +12,17 @@ Discrete Global Grid Systems ([DGGS](http://www.opengeospatial.org/projects/grou
 ![image](notebooks/image/earthquackes.png)
 
 `dggridpy` offers a python binding to some of the API implemented in the [DGGRID library][dggrid] and the [dggridR package][dggridr] to transform latitude/longitude coordinates in DGGS cells, and back from DGGS cells into the tiles' shapes to visualise results in a map.
+
+In detail, the package implements API for:
+
+ - Grid Generation. Generate the cells of a DGG.
+
+ - Address Conversion. Transform a collection of locations from one address form (such as longitude/latitude) to another (such as DGG cell indexes).
+
+ - Point Value Binning. By using the address conversion, values associated with a location can be associated with equal-size bins, then, using tools like [pandas](https://pandas.pydata.org/), the cells' values can be analysed (e.g. computing the arithmetic mean of the values which are contained in that cell).
+
+ - Output Grid Statistics. Output a table of grid characteristics for the specified DGG.
+
 
 [dggrid]: http://www.discreteglobalgrids.org/software/
 [dggridr]: https://github.com/r-barnes/dggridR
